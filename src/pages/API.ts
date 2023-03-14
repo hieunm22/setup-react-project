@@ -6,18 +6,19 @@ const CLIENT_BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL
 const key = process.env.REACT_APP_API_KEY
 const secret = process.env.REACT_APP_SECRET_KEY
 const headers = {
-  "Access-Control-Allow-Origin": "*",
-  "Content-Type": "text/plain",
-  "Accept": "application/json"
+	"Access-Control-Allow-Origin": "*",
+	"Content-Type": "text/plain",
+	Accept: "application/json"
 }
 
 const request = wretch(CLIENT_BASE_URL, { mode: "no-cors" })
-  .addon(QueryStringAddon)
-  // .addon(FormDataAddon)
-  .headers(headers)
+	.addon(QueryStringAddon)
+	// .addon(FormDataAddon)
+	.headers(headers)
 
-const EP = {  // EP = end points
-  getAll: "api-client/scores/live.json",
+const EP = {
+	// EP = end points
+	getAll: "api-client/scores/live.json"
 }
 
 export const getAll = () => request.url(EP.getAll)
@@ -30,7 +31,7 @@ export const getAll = () => request.url(EP.getAll)
 // ----------------------------------------------------------------------------------
 
 const handleGetAll = (response: any) => {
-  return response
+	return response
 }
 
 const handleError = (error: any) => ({ error })

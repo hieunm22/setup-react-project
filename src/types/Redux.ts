@@ -1,3 +1,1 @@
-export type ReduxState {
-  
-}
+export type ReduxState = {}

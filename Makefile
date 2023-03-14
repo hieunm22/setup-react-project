@@ -3,6 +3,7 @@ ENV ?= example
 setup-env:
 	yarn
 	cp .env.$(ENV) .env.local
+	git checkout HEAD -- yarn.lock
 
 reset:
 	rm -rf build
@@ -23,3 +24,7 @@ build-static:
 serve-static:
 	make build-static
 	serve -s build
+
+package:
+	yarn
+	yarn start
