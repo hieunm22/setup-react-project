@@ -1,70 +1,72 @@
 {
-	"name": "setup-react-project",
-	"version": "1.0.0",
-	"private": true,
-	"dependencies": {
-		"@fortawesome/fontawesome-free": "^6.3.0",
-		"@types/node": "^16.18.0",
-		"@types/react": "^18.0.19",
-		"@types/react-dom": "^18.0.6",
-		"bootstrap": "^3.4.1",
-		"classnames": "^2.3.2",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-router-dom": "^6.4.2",
-		"react-scripts": "^5.0.1",
-		"redux-zero": "^5.1.7",
-		"sass": "^1.56.1",
-		"typescript": "^4.8.4",
-		"web-vitals": "^3.3.0",
-		"wretch": "^2.5.1"
-	},
-	"devDependencies": {
-		"@babel/eslint-parser": "^7.18.2",
-		"@testing-library/jest-dom": "^5.16.5",
-		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^14.4.3",
-		"@types/jest": "^29.0.3",
-		"@typescript-eslint/parser": "^5.27.1",
-		"@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
-		"babel-eslint": "^10.1.0",
-		"babel-loader": "^8.1.0",
-		"enzyme": "^3.11.0",
-		"eslint": "^7.32.0",
-		"eslint-plugin-react": "^7.30.0",
-		"jest": "^29.0.3",
-		"jsdom": "^20.0.0",
-		"jsdom-global": "^3.0.2",
-		"prettier": "^2.8.4",
-		"ts-jest": "^29.0.1"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"eject": "react-scripts eject",
-		"format": "prettier --write \"src/**/*.ts*\"",
-		"lint": "eslint src --ext .tsx --ext .ts .",
-		"lint:fix": "eslint src --ext .tsx --ext .ts --fix",
-		"test": "jest --verbose",
-		"test:watch": "jest --watch --verbose",
-		"test:coverage": "jest --coverage"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	}
+ "name": "setup-react-project",
+ "version": "1.0.0",
+ "private": true,
+ "dependencies": {
+  "@fortawesome/fontawesome-free": "^6.4.0",
+  "@microsoft/signalr": "^7.0.7",
+  "@types/node": "^16.18.0",
+  "@types/react": "^18.0.19",
+  "@types/react-dom": "^18.0.6",
+  "bootstrap": "^3.4.1",
+  "classnames": "^2.3.2",
+  "qrcode.react": "^3.1.0",
+  "react": "^17.0.2",
+  "react-dom": "^17.0.2",
+  "react-qr-code": "^2.0.12",
+  "react-router-dom": "^6.4.2",
+  "react-scripts": "^5.0.1",
+  "redux-zero": "^5.1.7",
+  "sass": "^1.56.1",
+  "typescript": "^4.8.4",
+  "wretch": "^2.6.0"
+ },
+ "devDependencies": {
+  "@babel/eslint-parser": "^7.18.2",
+  "@testing-library/jest-dom": "^5.16.5",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^14.4.3",
+  "@types/jest": "^29.0.3",
+  "@typescript-eslint/parser": "^5.27.1",
+  "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+  "babel-eslint": "^10.1.0",
+  "babel-loader": "^8.1.0",
+  "enzyme": "^3.11.0",
+  "eslint": "^7.32.0",
+  "eslint-plugin-react": "^7.30.0",
+  "jest": "^29.0.3",
+  "jsdom": "^20.0.0",
+  "jsdom-global": "^3.0.2",
+  "prettier": "^2.8.4",
+  "ts-jest": "^29.0.1"
+ },
+ "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "eject": "react-scripts eject",
+  "format": "prettier --write \"src/**/*.ts*\"",
+  "lint": "eslint src --ext .tsx --ext .ts .",
+  "lint:fix": "eslint src --ext .tsx --ext .ts --fix",
+  "test": "jest --verbose",
+  "test:watch": "jest --watch --verbose",
+  "test:coverage": "jest --coverage"
+ },
+ "eslintConfig": {
+  "extends": [
+   "react-app",
+   "react-app/jest"
+  ]
+ },
+ "browserslist": {
+  "production": [
+   ">0.2%",
+   "not dead",
+   "not op_mini all"
+  ],
+  "development": [
+   "last 1 chrome version",
+   "last 1 firefox version",
+   "last 1 safari version"
+  ]
+ }
 }

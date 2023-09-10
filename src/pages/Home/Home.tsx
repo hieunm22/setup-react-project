@@ -1,16 +1,55 @@
-import { HomeProps } from "./Home.types"
 import "./Home.scss"
+import QRCode from "react-qr-code"
+import React, {
+	useEffect,
+	useRef,
+	useState
+} from "react"
 
-const Home = (props: HomeProps) => {
+const Home = () => {
+	const [text, setText] = useState<string>("")
+	const [qRValue, setQRValue] = useState<string>("")
+	const txt = useRef<HTMLInputElement>(null)
+
+	useEffect(() => {
+		const textBox = txt.current as HTMLInputElement
+		textBox.focus()
+	}, [])
+
+	const onTextChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setText(e.target.value)
+	}
+
+	const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+		if (e.code === "Enter") {
+			setQRValue(text)
+			setText("")
+		}
+	}
+
 	return (
-		<div>
-			<small>
-				You are running this application in <b>{process.env.NODE_ENV}</b> mode.
-			</small>
-			<form>
-				<input type="hidden" defaultValue={process.env.REACT_APP_NOT_SECRET_CODE} />
-			</form>
-		</div>
+		<>
+			<div className="qr-container flex-center">
+				<QRCode
+					value={qRValue}
+					size={192}
+					bgColor="#ffffff"
+					fgColor="#000000"
+					level="L"
+				/>
+			</div>
+			<div className="qr-input-container flex-center">
+				<input
+					type="text"
+					className="qr-input"
+					value={text}
+					ref={txt}
+					onChange={onTextChanged}
+					onKeyDown={onKeyDown}
+					placeholder="Enter QR content"
+				/>
+			</div>
+		</>
 	)
 }
 
