@@ -8,9 +8,14 @@
   justify-content: center;
 }
 
+.qr-wrapper {
+  width: 196px;
+  cursor: pointer;
+}
+
 .qr-input-container {
   width: 100%;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .qr-input {

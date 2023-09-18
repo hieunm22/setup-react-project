@@ -27,17 +27,14 @@ const Home = () => {
 		}
 	}
 
+	const onCopy = () => {
+		qRValue && navigator.clipboard.writeText(qRValue)
+	}
+
+	const title = `"${qRValue}", click to copy to clipboard`
+
 	return (
 		<>
-			<div className="qr-container flex-center">
-				<QRCode
-					value={qRValue}
-					size={192}
-					bgColor="#ffffff"
-					fgColor="#000000"
-					level="L"
-				/>
-			</div>
 			<div className="qr-input-container flex-center">
 				<input
 					type="text"
@@ -49,6 +46,17 @@ const Home = () => {
 					placeholder="Enter QR content"
 				/>
 			</div>
+			{qRValue && <div className="qr-container flex-center">
+				<div className="qr-wrapper" title={title} onClick={onCopy}>
+					<QRCode
+						value={qRValue}
+						size={192}
+						bgColor="#ffffff"
+						fgColor="#000000"
+						level="L"
+					/>
+				</div>
+			</div>}
 		</>
 	)
 }
