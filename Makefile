@@ -28,3 +28,7 @@ serve-static:
 package:
 	yarn
 	yarn start
+
+docker:
+	docker build -t qrcode .
+	docker run --name qrcode -ditp 6666:80 --restart unless-stopped qrcode
