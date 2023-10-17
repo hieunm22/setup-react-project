@@ -1,16 +1,37 @@
-import { HomeProps } from "./Home.types"
+import AudioWaveform from "../../components/AudioWaveform"
 import "./Home.scss"
+import { ChangeEvent, useState } from "react"
 
-const Home = (props: HomeProps) => {
+const Home = () => {
+	const [url, setUrl] = useState<string>("")
+
+	const onFileSelect = async (e: ChangeEvent<HTMLInputElement>) => {
+		const file = e.target.files && e.target.files[0] as Blob
+		// const response = await fetch(url);
+		// const data = await response.blob();
+		// const metadata = {
+		//   type: 'audio/ogg'
+		// };
+		// const file = new File([data], "test.ogg", metadata);
+		const newUrl = URL.createObjectURL(file as Blob)
+		setUrl(newUrl)
+	}
+
+	const showFileSelect = () => {
+		setUrl("")
+	}
+	if (url) {
+		return (
+			<>
+				<AudioWaveform audioURL={url} />
+				<input type="button" value="Select other file" onClick={showFileSelect} />
+			</>
+		)
+	}
 	return (
-		<div>
-			<small>
-				You are running this application in <b>{process.env.NODE_ENV}</b> mode.
-			</small>
-			<form>
-				<input type="hidden" defaultValue={process.env.REACT_APP_NOT_SECRET_CODE} />
-			</form>
-		</div>
+		<>
+			<input type="file" onChange={onFileSelect} />
+		</>
 	)
 }
 
