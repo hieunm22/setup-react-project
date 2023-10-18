@@ -1,0 +1,25 @@
+.waveform-container {
+  width: 80%;
+}
+
+#waveform {
+  // display: flex;
+}
+
+.wave-control-container {
+  // display: inline-block;
+}
+
+.control {
+  cursor: pointer;
+  font-size: 32px;
+  color: #567FFF;
+  border: solid 1px #567FFF;
+  width: 32px;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
